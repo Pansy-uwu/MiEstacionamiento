@@ -4,9 +4,9 @@
     margin: 20px;
 }
 
-.profile img {
-    width: 10cm;
-    height: 10cm;
+.profile ion-img {
+    width: 300px; /* Ajusta el ancho de la imagen */
+    height: 300px; /* Ajusta el alto de la imagen */
     border-radius: 50%;
     margin-right: 20px;
 }
@@ -34,9 +34,9 @@
     margin: 20px;
 }
 
-.parking img {
-    width: 10cm;
-    height: 10cm;
+.parking ion-img {
+    width: 300px; /* Ajusta el ancho de la imagen */
+    height: 300px; /* Ajusta el alto de la imagen */
     border-radius: 50%;
     margin-right: 20px;
 }

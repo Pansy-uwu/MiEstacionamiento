@@ -8,14 +8,23 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'perfil-viaje',
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: 'perfil-viaje',
     loadChildren: () => import('./perfil-viaje/perfil-viaje.module').then( m => m.PerfilViajePageModule)
   },
-
+  {
+    path: 'list',
+    loadChildren: () => import('./list/list.module').then( m => m.ListPageModule)
+  },
+  {
+    path: 'detalle',
+    loadChildren: () => import('./detalle/detalle.module').then( m => m.DetallePageModule)
+  },
 ];
+
 
 @NgModule({
   imports: [
