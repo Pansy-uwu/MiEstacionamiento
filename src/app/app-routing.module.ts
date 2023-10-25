@@ -10,7 +10,11 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'perfil-viaje',
+    loadChildren: () => import('./perfil-viaje/perfil-viaje.module').then( m => m.PerfilViajePageModule)
   },
+
 ];
 
 @NgModule({
