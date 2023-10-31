@@ -25,11 +25,11 @@ const routes: Routes = [
     loadChildren: () => import('./detalle/detalle.module').then( m => m.DetallePageModule)
   },
   {
-    path: 'pagina1', 
+    path: 'arriendo-activo', 
     component: ActiverentPage
   },
   { 
-    path: 'pagina2', 
+    path: 'arriendo', 
     component: RentPage
   },
 ];
