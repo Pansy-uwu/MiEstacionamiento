@@ -24,7 +24,7 @@ export class DetallePage implements OnInit {
           text: 'OK',
           handler: () => {
             // Utiliza el Router para la redirección
-            this.router.navigate(['/list']);
+            this.router.navigate(['/en-curso']);
           }
         }
       ]
