@@ -33,4 +33,14 @@
       </ion-card-content>
     </ion-card>
   </div>
+  <div class="button-container">
+    <ion-button (click)="presentAlert()">Arrendar</ion-button>
+      <ion-alert
+        trigger="present-alert"
+        header="Arriendo Realizado"
+        message="Se realizó el arriendo exitosamente"
+        [buttons]="alertButtons"
+      ></ion-alert>
+  </div>
+
 </ion-content>

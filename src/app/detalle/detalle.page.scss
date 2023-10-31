@@ -14,7 +14,7 @@
   .info-card-2 {
     margin-top: 10px;
     width: 100%; /* La tarjeta ocupa todo el ancho */
-    margin-bottom: 10px; /* Espacio entre la tarjeta y la imagen circular */
+    margin-bottom: 0px; /* Espacio entre la tarjeta y la imagen circular */
   }
   
   .circle-container {
@@ -28,4 +28,11 @@
     border-radius: 50%;
     overflow: hidden;
   }
-  
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    margin-bottom: 15px; 
+  }
