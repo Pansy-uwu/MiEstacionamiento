@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { ActiverentPage } from './activerent/activerent.page';
+import { RentPage } from './rent/rent.page';
 const routes: Routes = [
   {
     path: 'home',
@@ -22,6 +23,14 @@ const routes: Routes = [
   {
     path: 'detalle',
     loadChildren: () => import('./detalle/detalle.module').then( m => m.DetallePageModule)
+  },
+  {
+    path: 'pagina1', 
+    component: ActiverentPage
+  },
+  { 
+    path: 'pagina2', 
+    component: RentPage
   },
 ];
 
