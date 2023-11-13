@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SclientesService } from 'src/app/services/sclientes.service';
+import { SdbService } from 'src/app/services/sdb.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,7 +15,7 @@ export class LoginPage implements OnInit {
 
   errorMessage: string = '';
 
-  constructor(private clienteServ: SclientesService, private router: Router) {}
+  constructor(private dbServ: SdbService, private router: Router) {}
 
   ngOnInit() {}
 
@@ -26,7 +26,7 @@ export class LoginPage implements OnInit {
     };
 
     // Utiliza el servicio para obtener los usuarios
-    this.clienteServ.obtenerUsuarios().subscribe(usuarios => {
+    this.dbServ.obtenerUsuarios().subscribe(usuarios => {
       const usuarioValido = usuarios.find(
         (usuario) =>
           usuario.correo === datosInicioSesion.correo &&

@@ -12,11 +12,6 @@
       "contrasena": "asdf",
       "id": 2
     }
-  ],
-  "estacionamiento": [
-    {
-      "ubicacion": "algo",
-      "correo": ""
-    }
   ]
+  
 }

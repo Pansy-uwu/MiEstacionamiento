@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Icliente } from 'src/app/interfaces/icliente';
-import { SclientesService } from 'src/app/services/sclientes.service';
+import { Idb } from 'src/app/interfaces/idb';
+import { SdbService } from 'src/app/services/sdb.service';
 
 @Component({
   selector: 'app-registro',
@@ -10,7 +10,7 @@ import { SclientesService } from 'src/app/services/sclientes.service';
 })
 export class RegistroPage implements OnInit {
 
-  newCliente: Icliente = {
+  newCliente: Idb = {
     correo: "",
     nombre: "",
     contrasena: ""
@@ -20,7 +20,7 @@ export class RegistroPage implements OnInit {
   nombreError: string = '';
   contrasenaError: string = '';
 
-  constructor(private clienteServ: SclientesService, private router: Router) { }
+  constructor(private dbServ: SdbService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -41,8 +41,8 @@ export class RegistroPage implements OnInit {
       this.correoError = 'Correo electrónico no tiene un formato válido';
       validacionExitosa = false;
     } else {
-      this.clienteServ.obtenerUsuarios().subscribe((usuarios: any[]) => {
-        const usuarioExistente = usuarios.find((usuario: any) => usuario.correo === this.newCliente.correo);
+      this.dbServ.obtenerUsuarios().subscribe((usuario: any[]) => {
+        const usuarioExistente = usuario.find((usuario: any) => usuario.correo === this.newCliente.correo);
         if (usuarioExistente) {
           this.correoError = 'Este correo ya está registrado';
           validacionExitosa = false;
@@ -62,7 +62,7 @@ export class RegistroPage implements OnInit {
 
           if (validacionExitosa) {
             // Si no hay errores, crear el cliente
-            this.clienteServ.crearCliente(this.newCliente).subscribe(() => {
+            this.dbServ.crearCliente(this.newCliente).subscribe(() => {
               this.router.navigateByUrl('/inicio');
             });
           }

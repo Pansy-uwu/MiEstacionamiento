@@ -2,20 +2,20 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Icliente } from '../interfaces/icliente';
+import { Idb } from '../interfaces/idb';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SclientesService {
+export class SdbService {
 
   constructor(private httpClient :HttpClient) { }
 
-  crearCliente(newCliente:Icliente):Observable<Icliente>{
-    return this.httpClient.post<Icliente>(`${environment.apiURL}/usuario`, newCliente)
+  crearCliente(newCliente:Idb):Observable<Idb>{
+    return this.httpClient.post<Idb>(`${environment.apiURL}/db`, newCliente)
   }
 
   obtenerUsuarios(): Observable<any[]> {
-    return this.httpClient.get<any[]>(`${environment.apiURL}/usuario`);
+    return this.httpClient.get<any[]>(`${environment.apiURL}/db`);
   }
 }
