@@ -1,0 +1,27 @@
+<!-- tu-componente.component.html -->
+
+<ion-content [fullscreen]="true">
+  <div class="centered-container">
+    <div class="image-container">
+      <img alt="logo" src="assets/img/logo.png" />
+    </div>
+    <div class="input-container">
+      <ion-item class="custom-input">
+        <ion-label class="custom-label" position="floating">Correo Electronico</ion-label>
+        <ion-input class="custom-input-field" placeholder="" [(ngModel)]="newCliente.correo"></ion-input>
+      </ion-item>
+      <br>
+
+      <ion-item class="custom-input">
+        <ion-label class="custom-label" position="floating">Contraseña</ion-label>
+        <ion-input type="password" class="custom-input-field" placeholder="" [(ngModel)]="newCliente.contrasena"></ion-input>
+      </ion-item>
+      <br>
+      <ion-button expand="full" (click)="ingresarSesion()">Iniciar sesión</ion-button>
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      <div class="forgot-password">
+        ¿Haz olvidado tu contraseña? <a href="#" class="forgot-link"><strong>Recupérala Aquí</strong></a>
+      </div>
+    </div>
+  </div>
+</ion-content>

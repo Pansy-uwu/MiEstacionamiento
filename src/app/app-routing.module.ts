@@ -2,12 +2,8 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: '',
-    redirectTo: 'perfil-viaje',
+    redirectTo: 'inicio',
     pathMatch: 'full'
   },
   {
@@ -25,7 +21,20 @@ const routes: Routes = [
   {
   path: 'en-curso',
   loadChildren: () => import('./en-curso/en-curso.module').then( m => m.EnCursoPageModule)
-}
+},
+  {
+    path: 'login',
+    loadChildren: () => import('./Cliente/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./Cliente/registro/registro.module').then( m => m.RegistroPageModule)
+  },
+  {
+    path: 'inicio',
+    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+  }
+
 ];
 
 

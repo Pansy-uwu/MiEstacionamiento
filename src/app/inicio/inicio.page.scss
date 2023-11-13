@@ -1,0 +1,37 @@
+.centered-container {
+    display: flex;
+    flex-direction: column; /* Para apilar los contenedores verticalmente */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(156,196,228);
+  }
+  
+  .image-container {
+    max-width: 50%;
+    max-height: 50%;
+    margin-top: 20px;
+  }
+
+  ion-button {
+    --background: rgb(242, 120, 92);
+    --background-hover: rgb(215, 119, 97);
+    --background-activated: rgb(242,108,79);
+    --background-focused: rgb(242,108,79);
+  
+    --color: rgb(255, 255, 255);
+  
+    --border-radius: 0;
+    --border-color: rgb(242,108,79);
+    --border-style: solid;
+    --border-width: 1px;
+  
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+  
+    --ripple-color: deeppink;
+  
+    width: 50%;
+
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+  }

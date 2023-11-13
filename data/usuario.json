@@ -1,0 +1,22 @@
+{
+  "usuario": [
+    {
+      "correo": "sofia.alfaro.galaz@gmail.com",
+      "nombre": "asf",
+      "contrasena": "asdf",
+      "id": 1
+    },
+    {
+      "correo": "antonia.marambio@gmail.com",
+      "nombre": "asdfasdf",
+      "contrasena": "asdf",
+      "id": 2
+    }
+  ],
+  "estacionamiento": [
+    {
+      "ubicacion": "algo",
+      "correo": ""
+    }
+  ]
+}
