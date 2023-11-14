@@ -35,7 +35,7 @@ export class LoginPage implements OnInit {
 
       if (usuarioValido) {
         console.log('Inicio de sesión exitoso');
-        this.router.navigateByUrl('/perfil-viaje');
+        this.router.navigateByUrl('/perfil');
       } else {
         console.log('Credenciales incorrectas');
         // Mostrar mensaje de error

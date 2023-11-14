@@ -11,6 +11,12 @@
       "nombre": "asdasd",
       "contrasena": "asd",
       "id": 2
+    },
+    {
+      "correo": "so.alo@duocuc.cl",
+      "nombre": "asd",
+      "contrasena": "asd",
+      "id": 3
     }
   ],
   "estacionamiento": [
