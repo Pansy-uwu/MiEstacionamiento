@@ -7,8 +7,8 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'perfil-viaje',
-    loadChildren: () => import('./perfil-viaje/perfil-viaje.module').then( m => m.PerfilViajePageModule)
+    path: 'perfil',
+    loadChildren: () => import('./Cliente/perfil/perfil.module').then( m => m.PerfilPageModule)
   },
   {
     path: 'list',

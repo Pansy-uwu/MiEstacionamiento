@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Idb } from 'src/app/interfaces/idb';
+import { Usuario } from 'src/app/interfaces/idb';
 import { SdbService } from 'src/app/services/sdb.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { SdbService } from 'src/app/services/sdb.service';
 })
 export class RegistroPage implements OnInit {
 
-  newCliente: Idb = {
+  newCliente: Usuario = {
     correo: "",
     nombre: "",
     contrasena: ""
@@ -41,30 +41,39 @@ export class RegistroPage implements OnInit {
       this.correoError = 'Correo electrónico no tiene un formato válido';
       validacionExitosa = false;
     } else {
-      this.dbServ.obtenerUsuarios().subscribe((usuario: any[]) => {
-        const usuarioExistente = usuario.find((usuario: any) => usuario.correo === this.newCliente.correo);
-        if (usuarioExistente) {
-          this.correoError = 'Este correo ya está registrado';
-          validacionExitosa = false;
-        }
+      this.dbServ.obtenerUsuarios().subscribe({
+        next: (response: any) => {
+          const usuarioArray = response; // Cambiado a response en lugar de response.usuario
 
-        // Continuar con la lógica si es necesario
-        if (validacionExitosa) {
-          if (!this.newCliente.nombre) {
-            this.nombreError = 'Nombre de usuario es requerido';
-            validacionExitosa = false;
-          }
+          if (Array.isArray(usuarioArray)) {
+            const usuarioExistente = usuarioArray.find((user: any) => user.correo === this.newCliente.correo);
 
-          if (!this.newCliente.contrasena) {
-            this.contrasenaError = 'Contraseña es requerida';
-            validacionExitosa = false;
-          }
+            if (usuarioExistente) {
+              this.correoError = 'Este correo ya está registrado';
+              validacionExitosa = false;
+            }
 
-          if (validacionExitosa) {
-            // Si no hay errores, crear el cliente
-            this.dbServ.crearCliente(this.newCliente).subscribe(() => {
-              this.router.navigateByUrl('/inicio');
-            });
+            // Continuar con la lógica si es necesario
+            if (validacionExitosa) {
+              if (!this.newCliente.nombre) {
+                this.nombreError = 'Nombre de usuario es requerido';
+                validacionExitosa = false;
+              }
+
+              if (!this.newCliente.contrasena) {
+                this.contrasenaError = 'Contraseña es requerida';
+                validacionExitosa = false;
+              }
+
+              if (validacionExitosa) {
+                // Si no hay errores, crear el cliente
+                this.dbServ.crearCliente(this.newCliente).subscribe(() => {
+                  this.router.navigateByUrl('/inicio');
+                });
+              }
+            }
+          } else {
+            console.error('La respuesta del servicio no contiene un array:', response);
           }
         }
       });
