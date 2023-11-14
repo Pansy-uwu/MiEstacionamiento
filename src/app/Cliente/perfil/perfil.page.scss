@@ -1,12 +1,22 @@
-ion-menu::part(backdrop) {
-    background-color: rgb(58,137,201);
+  
+  ion-toolbar.custom-toolbar {
+    --background: rgb(234, 242, 249);
+    color: rgb(58, 137, 201);
+    display: flex;
+    align-items: center;
   }
   
-  ion-menu::part(container) {
-    border-radius: 0 20px 20px 0;
-  
-    box-shadow: 4px 0px 16px rgb(58,137,201);
+  ion-title {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos */
   }
+  
+  .profile-icon {
+    margin-right: 8px; /* Ajusta el margen según sea necesario */
+    font-size: 29px;
+    vertical-align: middle; /* Alinea verticalmente el icono en el medio del contenedor flex */
+  }
+  
   .menu-item {
     width: 100%;
     ion-icon {
@@ -14,9 +24,27 @@ ion-menu::part(backdrop) {
     }
     font-size: 18px;
     padding: 10px;
-    --inner-padding-end: 0; // Ajusta el espacio interno a la derecha
-    --border-width: 0; // Esto debería quitar cualquier borde o línea adicional
-    --highlight-background: transparent; // Ajusta el color de fondo al hacer clic (si es necesario)
-    cursor: pointer; // Añade un cursor para indicar que es interactivo
+    --inner-padding-end: 0;
+    --border-width: 0;
+    --highlight-background: transparent;
+    cursor: pointer;
+  }
+  
+  .centered-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(156, 196, 228);
+  }
+  
+  ion-menu::part(backdrop) {
+    background-color: rgb(58, 137, 201);
+  }
+  
+  ion-menu::part(container) {
+    border-radius: 0 20px 20px 0;
+    box-shadow: 4px 0px 16px rgb(58, 137, 201);
   }
   
