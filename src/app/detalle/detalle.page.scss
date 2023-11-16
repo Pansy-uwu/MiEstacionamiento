@@ -1,38 +1,60 @@
-.header-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-  }
-  
-  .info-card {
-    margin-top: 2px;
-    width: 100%; /* La tarjeta ocupa todo el ancho */
-    margin-bottom: 10px; /* Espacio entre la tarjeta y la imagen circular */
-  }
+.centered-container{
+  display: flex;
+  flex-direction: column; /* Para apilar los contenedores verticalmente */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(156,196,228);
+}
 
-  .info-card-2 {
-    margin-top: 10px;
-    width: 100%; /* La tarjeta ocupa todo el ancho */
-    margin-bottom: 0px; /* Espacio entre la tarjeta y la imagen circular */
-  }
-  
-  .circle-container {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .circle-image {
-    width: 300px; /* Ajusta el tamaño de la imagen circular según tus necesidades */
-    height: 300px;
-    border-radius: 50%;
-    overflow: hidden;
-  }
+.info-card {
+  margin-top: 2px;
+  width: 100%;
+  /* La tarjeta ocupa todo el ancho */
+  margin-bottom: 10px;
+  /* Espacio entre la tarjeta y la imagen circular */
+}
 
-  .button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0px;
-    margin-bottom: 15px; 
-  }
+.info-card-2 {
+  margin-top: 10px;
+  width: 100%;
+  /* La tarjeta ocupa todo el ancho */
+  margin-bottom: 0px;
+  /* Espacio entre la tarjeta y la imagen circular */
+}
+
+.circle-container {
+  display: flex;
+  justify-content: center;
+}
+
+.circle-image {
+  width: 300px;
+  /* Ajusta el tamaño de la imagen circular según tus necesidades */
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+ion-button {
+  --background: rgb(242, 120, 92);
+  --background-hover: rgb(215, 119, 97);
+  --background-activated: rgb(242, 108, 79);
+  --background-focused: rgb(242, 108, 79);
+
+  --color: rgb(255, 255, 255);
+
+  --border-radius: 0;
+  --border-color: rgb(242, 108, 79);
+  --border-style: solid;
+  --border-width: 1px;
+
+  --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+
+  --ripple-color: deeppink;
+
+  width: 50%;
+  margin-top: 50px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+}
