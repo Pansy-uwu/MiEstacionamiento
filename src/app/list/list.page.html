@@ -5,8 +5,8 @@
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-      <ion-button  [routerLink]="['/list']" >Arrendar Estacionamiento</ion-button>
-      <ion-button  [routerLink]="['/en-curso']" >En curso</ion-button>
+    <ion-button [routerLink]="['/list']">Arrendar Estacionamiento</ion-button>
+    <ion-button [routerLink]="['/en-curso']">En curso</ion-button>
   </ion-content>
 </ion-menu>
 <div class="ion-page" id="main-content">
@@ -18,91 +18,92 @@
       <ion-title>Mi Estacionamiento</ion-title>
     </ion-toolbar>
   </ion-header>
-  
-<ion-content [fullscreen]="true">
 
-  <ion-card routerLink="/detalle">
-    <img alt="Silhouette of mountains" src="assets/img/estacionamiento2.jpeg" />
-    <ion-card-header>
-      <ion-card-title>Providencia 456</ion-card-title>
-      <ion-card-subtitle>
-        <ion-item lines="none">
-          <ion-card-subtitle> Jose Gonzalez </ion-card-subtitle>
-          <ion-thumbnail class="circular-thumbnail" slot="end">
-            <img alt="Silhouette of mountains" src="assets/img/perfil1.jpg" />
-          </ion-thumbnail>
-        </ion-item>
-      </ion-card-subtitle>
-    </ion-card-header>
+  <ion-content [fullscreen]="true" class="centered-container">
+    <div class="centered-container">
 
-    <ion-card-content>
-      Este estacionamiento en arriendo ofrece una solución de 
-      estacionamiento conveniente y segura en el corazón del 
-      centro de la ciudad.
-    </ion-card-content>
-  </ion-card>
+      <ion-card routerLink="/detalle">
+        <img alt="Silhouette of mountains" src="assets/img/estacionamiento2.jpeg" />
+        <ion-card-header>
+          <ion-card-title>Providencia 456</ion-card-title>
+          <ion-card-subtitle>
+            <ion-item lines="none">
+              <ion-card-subtitle> Jose Gonzalez </ion-card-subtitle>
+              <ion-thumbnail class="circular-thumbnail" slot="end">
+                <img alt="Silhouette of mountains" src="assets/img/perfil1.jpg" />
+              </ion-thumbnail>
+            </ion-item>
+          </ion-card-subtitle>
+        </ion-card-header>
 
-  <ion-card>
-    <img alt="Silhouette of mountains" src="assets/img/estacionamiento1.jpg" />
-    <ion-card-header>
-      <ion-card-title>Providencia 456</ion-card-title>
-      <ion-card-subtitle>
-        <ion-item lines="none">
-          <ion-card-subtitle> Macarena Leiva </ion-card-subtitle>
-          <ion-thumbnail class="circular-thumbnail" slot="end">
-            <img alt="Silhouette of mountains" src="assets/img/perfil2.jpg" />
-          </ion-thumbnail>
-        </ion-item>
-      </ion-card-subtitle>
-    </ion-card-header>
+        <ion-card-content>
+          Este estacionamiento en arriendo ofrece una solución de
+          estacionamiento conveniente y segura en el corazón del
+          centro de la ciudad.
+        </ion-card-content>
+      </ion-card>
 
-    <ion-card-content>
-      Este estacionamiento en arriendo ofrece una solución de 
-      estacionamiento conveniente y segura en el corazón del 
-      centro de la ciudad.
-    </ion-card-content>
-  </ion-card>
+      <ion-card>
+        <img alt="Silhouette of mountains" src="assets/img/estacionamiento1.jpg" />
+        <ion-card-header>
+          <ion-card-title>Providencia 456</ion-card-title>
+          <ion-card-subtitle>
+            <ion-item lines="none">
+              <ion-card-subtitle> Macarena Leiva </ion-card-subtitle>
+              <ion-thumbnail class="circular-thumbnail" slot="end">
+                <img alt="Silhouette of mountains" src="assets/img/perfil2.jpg" />
+              </ion-thumbnail>
+            </ion-item>
+          </ion-card-subtitle>
+        </ion-card-header>
 
-  <ion-card>
-    <img alt="Silhouette of mountains" src="assets/img/estacionamiento3.jpg" />
-    <ion-card-header>
-      <ion-card-title>Providencia 456</ion-card-title>
-      <ion-card-subtitle>
-        <ion-item lines="none">
-          <ion-card-subtitle> Pedro Aguirre </ion-card-subtitle>
-          <ion-thumbnail class="circular-thumbnail" slot="end">
-            <img alt="Silhouette of mountains" src="assets/img/perfil3.webp" />
-          </ion-thumbnail>
-        </ion-item>
-      </ion-card-subtitle>
-    </ion-card-header>
+        <ion-card-content>
+          Este estacionamiento en arriendo ofrece una solución de
+          estacionamiento conveniente y segura en el corazón del
+          centro de la ciudad.
+        </ion-card-content>
+      </ion-card>
 
-    <ion-card-content>
-      Este estacionamiento en arriendo ofrece una solución de 
-      estacionamiento conveniente y segura en el corazón del 
-      centro de la ciudad.
-    </ion-card-content>
-  </ion-card>
+      <ion-card>
+        <img alt="Silhouette of mountains" src="assets/img/estacionamiento3.jpg" />
+        <ion-card-header>
+          <ion-card-title>Providencia 456</ion-card-title>
+          <ion-card-subtitle>
+            <ion-item lines="none">
+              <ion-card-subtitle> Pedro Aguirre </ion-card-subtitle>
+              <ion-thumbnail class="circular-thumbnail" slot="end">
+                <img alt="Silhouette of mountains" src="assets/img/perfil3.webp" />
+              </ion-thumbnail>
+            </ion-item>
+          </ion-card-subtitle>
+        </ion-card-header>
 
-  <ion-card>
-    <img alt="Silhouette of mountains" src="assets/img/estacionamiento4.jpg" />
-    <ion-card-header>
-      <ion-card-title>Providencia 456</ion-card-title>
-      <ion-card-subtitle>
-        <ion-item lines="none">
-          <ion-card-subtitle> Julio Cabrera </ion-card-subtitle>
-          <ion-thumbnail class="circular-thumbnail" slot="end">
-            <ion-img src="assets/img/foto.jpg"></ion-img>
-          </ion-thumbnail>
-        </ion-item>
-      </ion-card-subtitle>
-    </ion-card-header>
+        <ion-card-content>
+          Este estacionamiento en arriendo ofrece una solución de
+          estacionamiento conveniente y segura en el corazón del
+          centro de la ciudad.
+        </ion-card-content>
+      </ion-card>
 
-    <ion-card-content>
-      Este estacionamiento en arriendo ofrece una solución de 
-      estacionamiento conveniente y segura en el corazón del 
-      centro de la ciudad.
-    </ion-card-content>
-  </ion-card>
+      <ion-card>
+        <img alt="Silhouette of mountains" src="assets/img/estacionamiento4.jpg" />
+        <ion-card-header>
+          <ion-card-title>Providencia 456</ion-card-title>
+          <ion-card-subtitle>
+            <ion-item lines="none">
+              <ion-card-subtitle> Julio Cabrera </ion-card-subtitle>
+              <ion-thumbnail class="circular-thumbnail" slot="end">
+                <ion-img src="assets/img/foto.jpg"></ion-img>
+              </ion-thumbnail>
+            </ion-item>
+          </ion-card-subtitle>
+        </ion-card-header>
 
-</ion-content>
+        <ion-card-content>
+          Este estacionamiento en arriendo ofrece una solución de
+          estacionamiento conveniente y segura en el corazón del
+          centro de la ciudad.
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-content>

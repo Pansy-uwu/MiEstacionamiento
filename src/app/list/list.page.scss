@@ -1,13 +1,25 @@
 #container {
     text-align: center;
-  
     position: absolute;
     left: 0;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
   }
-  
+
+  .centered-container {
+    display: flex;
+    flex-direction: column; /* Para apilar los contenedores verticalmente */
+    background-color: rgb(156,196,228);
+  }
+
+  ion-item{
+    display: flex;
+    flex-direction: column; /* Para apilar los contenedores verticalmente */
+    background-color: rgb(200, 227, 249);
+  }
+
+
   #container strong {
     font-size: 20px;
     line-height: 26px;
@@ -48,3 +60,4 @@
     height: 100%;
     object-fit: cover;  
   }
+  

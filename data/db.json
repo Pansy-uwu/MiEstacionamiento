@@ -20,18 +20,15 @@
       "apellido": "Alfaro",
       "contrasena": "1234",
       "id": 3
+    },
+    {
+      "correo": "so.alo@duocuc.cl",
+      "nombre": "asd",
+      "contrasena": "asd",
+      "id": 3
     }
   ],
   "arriendo": [
-    {
-      "id": 1,
-      "fecIn": "2023-11-17T12:00:00Z",
-      "fecTer": "2023-11-18T12:00:00Z",
-      "calificacion": 0,
-      "correo": "sofia.alfaro.galaz@gmail.com"
-    }
-  ],
-  "estacionamiento": [
     {
       "direccion": "Calle Ejemplo 123",
       "tarifa": 10.5,
