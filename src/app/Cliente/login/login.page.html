@@ -8,16 +8,16 @@
     <div class="input-container">
       <ion-item class="custom-input">
         <ion-label class="custom-label" position="floating">Correo Electronico</ion-label>
-        <ion-input class="custom-input-field" placeholder="" [(ngModel)]="newCliente.correo"></ion-input>
+        <ion-input class="custom-input-field" placeholder="" [(ngModel)]="usuario.correo"></ion-input>
       </ion-item>
       <br>
 
       <ion-item class="custom-input">
         <ion-label class="custom-label" position="floating">Contraseña</ion-label>
-        <ion-input type="password" class="custom-input-field" placeholder="" [(ngModel)]="newCliente.contrasena"></ion-input>
+        <ion-input type="password" class="custom-input-field" placeholder="" [(ngModel)]="usuario.contrasena"></ion-input>
       </ion-item>
       <br>
-      <ion-button expand="full" (click)="ingresarSesion()">Iniciar sesión</ion-button>
+      <ion-button expand="full" (click)="login()">Iniciar sesión</ion-button>
       <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
       <div class="forgot-password">
         ¿Haz olvidado tu contraseña? <a href="#" class="forgot-link"><strong>Recupérala Aquí</strong></a>

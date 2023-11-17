@@ -1,6 +1,6 @@
 <!-- tu-componente.component.html -->
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" scrollY="true">
   <div class="centered-container">
     <div class="image-container">
       <img alt="logo" src="assets/img/logo.png" />
@@ -14,10 +14,17 @@
       <br>
 
       <ion-item class="custom-input">
-        <ion-label class="custom-label" position="floating">Nombre de usuario</ion-label>
+        <ion-label class="custom-label" position="floating">Nombre</ion-label>
         <ion-input class="custom-input-field" placeholder="" [(ngModel)]="newCliente.nombre" required></ion-input>
       </ion-item>
       <div *ngIf="nombreError" class="error-message">{{ nombreError }}</div>
+      <br>
+
+      <ion-item class="custom-input">
+        <ion-label class="custom-label" position="floating">Apellido</ion-label>
+        <ion-input class="custom-input-field" placeholder="" [(ngModel)]="newCliente.apellido" required></ion-input>
+      </ion-item>
+      <div *ngIf="apellidoError" class="error-message">{{ nombreError }}</div>
       <br>
 
       <ion-item class="custom-input">

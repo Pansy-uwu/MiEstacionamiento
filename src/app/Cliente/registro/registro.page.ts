@@ -13,11 +13,13 @@ export class RegistroPage implements OnInit {
   newCliente: Usuario = {
     correo: "",
     nombre: "",
+    apellido: "",
     contrasena: ""
   };
 
   correoError: string = '';
   nombreError: string = '';
+  apellidoError: string = '';
   contrasenaError: string = '';
 
   constructor(private dbServ: SdbService, private router: Router) { }
@@ -56,7 +58,12 @@ export class RegistroPage implements OnInit {
             // Continuar con la lógica si es necesario
             if (validacionExitosa) {
               if (!this.newCliente.nombre) {
-                this.nombreError = 'Nombre de usuario es requerido';
+                this.nombreError = 'Nombre es requerido';
+                validacionExitosa = false;
+              }
+
+              if (!this.newCliente.apellido) {
+                this.apellidoError = 'Apellido es requerido';
                 validacionExitosa = false;
               }
 

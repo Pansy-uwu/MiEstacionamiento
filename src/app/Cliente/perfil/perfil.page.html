@@ -1,43 +1,56 @@
 <ion-menu contentId="main-content">
-    <ion-header [translucent]="true">
-      <ion-toolbar>
-        <ion-title>Menu Content</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content class="ion-padding">
-        <ion-button  [routerLink]="['/list']" >Arrendar Estacionamiento</ion-button>
-        <ion-button  [routerLink]="['/en-curso']" >En curso</ion-button>
-    </ion-content>
-  </ion-menu>
-  <div class="ion-page" id="main-content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-        <ion-title>Perfil</ion-title>
-      </ion-toolbar>
-    </ion-header>
+  <ion-header>
+    <ion-toolbar class="custom-toolbar">
+      <ion-title>Bienvenido</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list class="menu-list">
+      <ion-item-group>
+        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false">
+          <ion-icon name="home"></ion-icon> Inicio
+        </ion-item>
+        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false">
+          <ion-icon name="pint"></ion-icon> Mis Arriendos
+        </ion-item>
+        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false">
+          <ion-icon name="person"></ion-icon> Perfil
+        </ion-item>
+        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false">
+          <ion-icon name="settings"></ion-icon> Configuración
+        </ion-item>
+        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false">
+          <ion-icon name="log-in"></ion-icon> Salir
+        </ion-item>
+      </ion-item-group>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar class="custom-toolbar">
+      <ion-buttons slot="start" class="menu-button">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <div class="centered-container">
+      <ion-avatar>
+        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
     
-<ion-content [fullscreen]="true">
-    <div class="profile">
-        <ion-img src="assets/img/foto.jpg"></ion-img>
-        <div class="profile-info">
-            <h2>Rodrigo Ramirez</h2>
-            <p>Valoración del Cliente: 4.8 estrellas</p>
-        </div>
-    </div>
-    <div class="bar"></div>
-    <div class="title">
-        <h1>Estacionamientos</h1>
-        <h1>Disponibles</h1>
-    </div>
-    <div class="parking">
-        <ion-img src="assets/img/esta.jpeg"></ion-img>
-        <div class="parking-info">
-            <h2>Estacionamiento 47</h2>
-            <p>-2: X</p>
-            <p>Dirección: Av.Rancagua 45. Santiago Centro</p>
-        </div>
-    </div>
-</ion-content>
+    <ion-card class="user-card">
+      <ion-card-content>
+        <ion-card-title>{{ userData?.nombre }}</ion-card-title>
+        <ion-card-subtitle>{{ userData?.correo }}</ion-card-subtitle>
+        <!-- Agrega otras propiedades del usuario según tus necesidades -->
+        <br>
+        <ion-button expand="full">Actualiza Datos</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  </ion-content>
+</div>

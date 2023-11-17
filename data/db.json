@@ -3,22 +3,41 @@
     {
       "correo": "sofia.alfaro.galaz@gmail.com",
       "nombre": "asf",
+      "apellido": "aaaa",
       "contrasena": "asdf",
       "id": 1
     },
     {
-      "correo": "so.alfaro@duocuc.cl",
-      "nombre": "asdasd",
-      "contrasena": "asd",
+      "correo": "sofia.alfaro.galaz@ail.com",
+      "nombre": "sofia",
+      "apellido": "akf",
+      "contrasena": "miau123",
       "id": 2
+    },
+    {
+      "correo": "so.alfaro@duocuc.cl",
+      "nombre": "Sofia",
+      "apellido": "Alfaro",
+      "contrasena": "1234",
+      "id": 3
+    }
+  ],
+  "arriendo": [
+    {
+      "id": 1,
+      "fecIn": "2023-11-17T12:00:00Z",
+      "fecTer": "2023-11-18T12:00:00Z",
+      "calificacion": 0,
+      "correo": "sofia.alfaro.galaz@gmail.com"
     }
   ],
   "estacionamiento": [
     {
-      "id": 1,
-      "patente": "RR0924",
-      "modelo": "hyundai",
-      "correo": "sofia.alfaro.galaz@gmail.com"
+      "direccion": "Calle Ejemplo 123",
+      "tarifa": 10.5,
+      "disponibilidad": true,
+      "correo": "sofia.alfaro.galaz@gmail.com",
+      "id": 1
     }
   ]
 }

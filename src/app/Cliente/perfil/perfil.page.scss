@@ -1,49 +1,92 @@
-.profile {
-    display: flex;
-    align-items: center;
-    margin: 20px;
-}
+/* CSS GENERAL */
 
-.profile ion-img {
-    width: 300px; /* Ajusta el ancho de la imagen */
-    height: 300px; /* Ajusta el alto de la imagen */
-    border-radius: 50%;
-    margin-right: 20px;
-}
+ion-toolbar.custom-toolbar {
+    --background: rgb(234, 242, 249);
+    color: rgb(27, 50, 95);
+  }
+  
+  ion-menu-button{
+    color: rgb(27, 50, 95);
+  }
 
-.profile-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.bar {
+  .menu-item {
     width: 100%;
-    height: 5px; /* Ajusta el grosor de la barra aquí */
-    background-color: #e0e0e0;
-}
-
-.title {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 24px;
-}
-
-.parking {
-    display: flex;
-    align-items: center;
-    margin: 20px;
-}
-
-.parking ion-img {
-    width: 300px; /* Ajusta el ancho de la imagen */
-    height: 300px; /* Ajusta el alto de la imagen */
-    border-radius: 50%;
-    margin-right: 20px;
-}
-
-.parking-info {
+    ion-icon {
+      margin-right: 8px;
+      color: rgb(27, 50, 95);
+    }
+    font-size: 18px;
+    color: rgb(27, 50, 95);
+    padding: 10px;
+    --inner-padding-end: 0;
+    --border-width: 0;
+    --highlight-background: transparent;
+    cursor: pointer;
+  }
+  
+  .centered-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    background-color: rgb(156, 196, 228);
+  }
+  
+  ion-menu::part(backdrop) {
+    background-color: rgb(58, 137, 201);
+  }
+  
+  ion-menu::part(container) {
+    border-radius: 0 20px 20px 0;
+    box-shadow: 4px 0px 16px rgb(58, 137, 201);
+  }
+  
+  ion-button {
+    --background: rgb(242, 120, 92);
+    --background-hover: rgb(215, 119, 97);
+    --background-activated: rgb(242,108,79);
+    --background-focused: rgb(242,108,79);
+  
+    --color: rgb(255, 255, 255);
+  
+    --border-radius: 0;
+    --border-color: rgb(242,108,79);
+    --border-style: solid;
+    --border-width: 1px;
+  
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+  
+    --ripple-color: deeppink;
+  
+    --width: 50%;
+
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+  }
+
+/* CSS DE LA PAGINA */
+
+ion-avatar {
+  width: 200px; /* Ajusta el tamaño según tus necesidades */
+  height: 200px; /* Ajusta el tamaño según tus necesidades */
+  margin-top: -70%;
 }
 
+ion-avatar img {
+  width: 100%; /* La imagen ocupará el 100% del contenedor */
+  height: 100%; /* La imagen ocupará el 100% del contenedor */
+  object-fit: cover; /* Ajusta el comportamiento de la imagen para cubrir el contenedor sin distorsionar */
+  border-radius: 50%; /* Asegura que la imagen tenga bordes redondeados */
+}
 
+.user-card {
+  width: 80%; /* Ajusta el ancho según tus necesidades */
+  max-width: 400px; /* Establece un ancho máximo si es necesario */
+  margin-top: 16px; /* Espacio entre la imagen y la tarjeta */
+  background-color: rgb(234, 242, 249); /* Color de fondo de la tarjeta */
+  ion-card-content {
+    padding: 16px;
+  }
+}

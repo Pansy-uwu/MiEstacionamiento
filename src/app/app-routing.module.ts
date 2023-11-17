@@ -33,7 +33,19 @@ const routes: Routes = [
   {
     path: 'inicio',
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+  },  {
+    path: 'listar-esta',
+    loadChildren: () => import('./Estacionamiento/listar-esta/listar-esta.module').then( m => m.ListarEstaPageModule)
+  },
+  {
+    path: 'agregrar-esta',
+    loadChildren: () => import('./Estacionamiento/agregrar-esta/agregrar-esta.module').then( m => m.AgregrarEstaPageModule)
+  },
+  {
+    path: 'modificar-esta',
+    loadChildren: () => import('./Estacionamiento/modificar-esta/modificar-esta.module').then( m => m.ModificarEstaPageModule)
   }
+
 
 ];
 
