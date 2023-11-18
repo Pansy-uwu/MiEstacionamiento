@@ -38,25 +38,37 @@
 
   <ion-content>
     <div class="centered-container">
-      <ion-avatar class="custom-avatar">
-        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-      </ion-avatar>
-      <ion-card *ngIf="userData">
-        <ion-card-content>
-          <ion-card-title>Mi Perfil</ion-card-title>
-          <ion-card-subtitle>{{ userData.nombre }} {{ userData.apellido }}</ion-card-subtitle>
-          <ion-card-subtitle>{{ userData.correo }}</ion-card-subtitle>
-          <!-- Agrega otras propiedades del usuario según tus necesidades -->
-          <br>
-          <ion-button expand="full" [routerLink]="['/modifica-datos/:id']" >Actualizar Datos </ion-button>
-          <br>
-          <ion-button expand="full">Mis Tarjetas</ion-button>
-          <br>
-          <ion-button expand="full">Mis Estacionamiento</ion-button>
-        </ion-card-content>
-      </ion-card>
-      <div *ngIf="userData === null">
-        <p>No se encontraron datos del usuario.</p>
-      </div>
-      
-</div>
+      <ion-label class="custom-message" color="primary">
+        <ion-icon name="information-circle-outline"></ion-icon> Ingrese sus datos modificados
+      </ion-label>
+      <div class="input-container">
+        <ion-item class="custom-input">
+          <ion-label class="custom-label" position="floating">Correo Electronico</ion-label>
+          <ion-input class="custom-input-field" placeholder="" [(ngModel)]="usuario.correo" required></ion-input>
+        </ion-item>
+        
+        <br>
+  
+        <ion-item class="custom-input">
+          <ion-label class="custom-label" position="floating">Nombre</ion-label>
+          <ion-input class="custom-input-field" placeholder="" [(ngModel)]="usuario.nombre" required></ion-input>
+        </ion-item>
+        
+        <br>
+  
+        <ion-item class="custom-input">
+          <ion-label class="custom-label" position="floating">Apellido</ion-label>
+          <ion-input class="custom-input-field" placeholder="" [(ngModel)]="usuario.apellido"  required></ion-input>
+        </ion-item>
+        
+        <br>
+  
+        <ion-item class="custom-input">
+          <ion-label class="custom-label" position="floating">Contraseña</ion-label>
+          <ion-input class="custom-input-field" placeholder="" [(ngModel)]="usuario.contrasena" required></ion-input>
+        </ion-item>
+        
+        <br>
+  
+        <ion-button (click)="actualizarUsuario()" expand="full">Actualizar</ion-button>
+    </div>

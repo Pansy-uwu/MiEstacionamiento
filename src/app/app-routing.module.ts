@@ -37,7 +37,12 @@ const routes: Routes = [
   {
     path: 'modificar-esta',
     loadChildren: () => import('./Estacionamiento/modificar-esta/modificar-esta.module').then( m => m.ModificarEstaPageModule)
+  },
+  {
+    path: 'modifica-datos/:id',
+    loadChildren: () => import('./Cliente/modifica-datos/modifica-datos.module').then( m => m.ModificaDatosPageModule)
   }
+
 
 
 ];

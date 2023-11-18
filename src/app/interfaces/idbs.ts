@@ -6,7 +6,7 @@ export interface Usuarios {
 	id: number;
 }
 
-export interface Arriendo {
+export interface Arriendos {
 	id: number;
 	fecIn: Date;
 	fecTer: Date;
@@ -14,7 +14,7 @@ export interface Arriendo {
 	correo: string;
 }
 
-export interface Estacionamiento{
+export interface Estacionamientos{
 	direccion: String;
 	tarifa: Number;
 	disponibilidad: boolean;
@@ -24,6 +24,6 @@ export interface Estacionamiento{
 
 export interface Data {
 	usuario: Usuarios[];
-	arriendo: Arriendo[];
-	estacionamiento: Estacionamiento[];
+	arriendo: Arriendos[];
+	estacionamiento: Estacionamientos[];
 }
