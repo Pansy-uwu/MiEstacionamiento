@@ -9,38 +9,41 @@ import { AutenticacionService } from 'src/app/services/autenticación.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  errorMessage: string = '';
+  credenciales = {
+    correo: '',
+    contrasena: '',
+  };
 
   constructor(
     private dbServ: SdbService,
     private authService: AutenticacionService,
     private router: Router
-  ) { }
-  errorMessage: string = '';
-  ngOnInit() { }
+  ) {}
 
-  public usuario = {
-    correo: "",
-    contrasena: ""
-  }
+  ngOnInit() {}
 
   login() {
+    this.errorMessage = ''; // Limpiar el mensaje de error al intentar iniciar sesión nuevamente
+
     this.dbServ.obtenerUsuarios().subscribe({
       next: (response: any) => {
         const usuarioArray = response;
-  
+
         if (Array.isArray(usuarioArray)) {
-          const usuarioExistente = usuarioArray.find((user: any) => user.correo === this.usuario.correo);
-  
+          const usuarioExistente = usuarioArray.find((user: any) => user.correo === this.credenciales.correo);
+
           if (usuarioExistente) {
-            // Llamar al servicio de autenticación solo si el usuario existe
-            this.authService.iniciarSesion(this.usuario.correo, this.usuario.contrasena);
-            if (this.authService.estaAutenticado()) {
-              console.log('Inicio de sesión exitoso');
-              this.router.navigateByUrl('/perfil');
-            } else {
-              console.log('Credenciales incorrectas');
-              this.errorMessage = 'Credenciales incorrectas';
-            }
+            this.authService.iniciarSesion(this.credenciales.correo, this.credenciales.contrasena);
+
+            this.authService.usuarioAutenticado$.subscribe((autenticado: boolean) => {
+              if (autenticado) {
+                console.log('Inicio de sesión exitoso');
+                this.router.navigateByUrl('/perfil');
+              } else {
+                this.errorMessage = 'Credenciales incorrectas';
+              }
+            });
           } else {
             console.log('Usuario no encontrado');
             this.errorMessage = 'Usuario no encontrado';

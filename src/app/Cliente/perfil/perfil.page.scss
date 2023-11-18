@@ -24,47 +24,52 @@ ion-toolbar.custom-toolbar {
     cursor: pointer;
   }
   
-  .centered-container {
-    display: flex;
-    flex-direction: column;
-}
+  ion-button {
+    --background: rgb(242, 120, 92);
+    --background-hover: rgb(215, 119, 97);
+    --background-activated: rgb(242,108,79);
+    --background-focused: rgb(242,108,79);
+  
+    --color: rgb(255, 255, 255);
+  
+    --border-radius: 0;
+    --border-color: rgb(242,108,79);
+    --border-style: solid;
+    --border-width: 1px;
+  
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+  
+    --ripple-color: deeppink;
+  
+    --width: 50%;
 
-.bar {
-    width: 100%;
-    ion-icon {
-      margin-right: 8px;
-      color: rgb(27, 50, 95);
-    }
-    font-size: 18px;
-    color: rgb(27, 50, 95);
-    padding: 10px;
-    --inner-padding-end: 0;
-    --border-width: 0;
-    --highlight-background: transparent;
-    cursor: pointer;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
   }
+
   
   .centered-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Para apilar los contenedores verticalmente */
     justify-content: center;
     align-items: center;
-    margin: 20px;
-}
-
-.parking ion-img {
-    width: 300px; /* Ajusta el ancho de la imagen */
-    height: 300px; /* Ajusta el alto de la imagen */
-    border-radius: 50%;
-    margin-right: 20px;
-}
-
-.user-card {
-  width: 80%; /* Ajusta el ancho según tus necesidades */
-  max-width: 400px; /* Establece un ancho máximo si es necesario */
-  margin-top: 16px; /* Espacio entre la imagen y la tarjeta */
-  background-color: rgb(234, 242, 249); /* Color de fondo de la tarjeta */
-  ion-card-content {
-    padding: 16px;
+    min-height: 100vh;
+    background-color: rgb(156,196,228);
   }
+  
+
+ion-avatar {
+  width: 200px; /* Ajusta el ancho según tus necesidades */
+  height: 200px; /* Ajusta la altura según tus necesidades */
+  border-radius: 50%;
+}
+.custom-avatar img {
+  width: 200px; /* Ajusta el ancho según tus necesidades */
+  height: 200px; /* Ajusta la altura según tus necesidades */
+  border-radius: 50%;
+  object-fit: cover; /* Ajusta la propiedad object-fit según tus necesidades */
+  margin-top: -30px;
+}
+ion-card {
+  margin-top: -10px; /* Ajusta el margen superior según tus necesidades */
 }

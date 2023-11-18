@@ -8,13 +8,13 @@
     <div class="input-container">
       <ion-item class="custom-input">
         <ion-label class="custom-label" position="floating">Correo Electronico</ion-label>
-        <ion-input class="custom-input-field" placeholder="" [(ngModel)]="usuario.correo"></ion-input>
+        <ion-input class="custom-input-field" placeholder="" [(ngModel)]="credenciales.correo"></ion-input>
       </ion-item>
       <br>
 
       <ion-item class="custom-input">
         <ion-label class="custom-label" position="floating">Contraseña</ion-label>
-        <ion-input type="password" class="custom-input-field" placeholder="" [(ngModel)]="usuario.contrasena"></ion-input>
+        <ion-input type="password" class="custom-input-field" placeholder="" [(ngModel)]="credenciales.contrasena"></ion-input>
       </ion-item>
       <br>
       <ion-button expand="full" (click)="login()">Iniciar sesión</ion-button>

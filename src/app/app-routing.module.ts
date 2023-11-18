@@ -11,14 +11,6 @@ const routes: Routes = [
     loadChildren: () => import('./Cliente/perfil/perfil.module').then( m => m.PerfilPageModule)
   },
   {
-    path: 'list',
-    loadChildren: () => import('./list/list.module').then( m => m.ListPageModule)
-  },
-  {
-    path: 'detalle',
-    loadChildren: () => import('./detalle/detalle.module').then( m => m.DetallePageModule)
-  },
-  {
   path: 'en-curso',
   loadChildren: () => import('./en-curso/en-curso.module').then( m => m.EnCursoPageModule)
 },
@@ -33,7 +25,8 @@ const routes: Routes = [
   {
     path: 'inicio',
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
-  },  {
+  },
+  {
     path: 'listar-esta',
     loadChildren: () => import('./Estacionamiento/listar-esta/listar-esta.module').then( m => m.ListarEstaPageModule)
   },

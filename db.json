@@ -36,5 +36,31 @@
       "correo": "sofia.alfaro.galaz@gmail.com",
       "id": 1
     }
+  ],
+  "estacionamiento": [
+    {
+      "direccion": "Calle Ejemplo 123",
+      "tarifa": 10000,
+      "disponibilidad": true,
+      "correo": "sofia.alfaro.galaz@gmail.com",
+      "descripcion": "Este estacionamiento en arriendo ofrece una solución de estacionamiento conveniente y segura en el corazón del centro de la ciudad.",
+      "id": 1
+    },
+    {
+      "direccion": "Calle Ejemplo 123",
+      "tarifa": 1000550,
+      "disponibilidad": true,
+      "correo": "sofia.alfaro.galaz@gmail.com",
+      "descripcion": "Este estacionamiento en arriendo ofrece una solución de estacionamiento conveniente y segura en el corazón del centro de la ciudad.",
+      "id": 2
+    },
+    {
+      "direccion": "Calle Ejemplo 100003",
+      "tarifa": 10000,
+      "disponibilidad": true,
+      "correo": "sofia.alfaro.galaz@gmail.com",
+      "descripcion": "Este estacionamiento en arriendo ofrece una solución de estacionamiento conveniente y segura en el corazón del centro de la ciudad.",
+      "id": 3
+    }
   ]
 }

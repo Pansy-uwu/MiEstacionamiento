@@ -1,13 +1,71 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>listar-esta</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">listar-esta</ion-title>
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar class="custom-toolbar">
+      <ion-title>Bienvenido</ion-title>
     </ion-toolbar>
   </ion-header>
-</ion-content>
+  <ion-content class="ion-padding">
+    <ion-list class="menu-list">
+      <ion-item-group>
+        <ion-item [routerLink]="['/listar-esta']" routerDirection="forward" class="menu-item" detail="false">
+          <ion-icon name="home"></ion-icon> Inicio
+        </ion-item>
+        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false">
+          <ion-icon name="pint"></ion-icon> Mis Arriendos
+        </ion-item>
+        <ion-item [routerLink]="['/perfil']" routerDirection="forward" class="menu-item" detail="false">
+          <ion-icon name="person"></ion-icon> Perfil
+        </ion-item>
+        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false">
+          <ion-icon name="settings"></ion-icon> Configuración
+        </ion-item>
+        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false">
+          <ion-icon name="log-in"></ion-icon> Salir
+        </ion-item>
+      </ion-item-group>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content" scrollY="true">
+  <ion-header>
+    <ion-toolbar class="custom-toolbar">
+      <ion-buttons slot="start" class="menu-button">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+   
+  
+    <div class="centered-container">
+      <div class="title-card">
+        <div class="title">
+          <ion-icon name="navigate" class="icon"></ion-icon>
+          Estacionamientos En tu Zona
+        </div>
+      </div>
+      <ion-card *ngFor="let estacionamiento of estacionamientos">
+        <img alt="Silhouette of mountains" src="assets/img/estacionamiento2.jpeg" />
+        <ion-card-header>
+          <ion-card-title>{{ estacionamiento.direccion }}</ion-card-title>
+          <ion-card-subtitle>
+            <ion-item lines="none">
+              <ion-card-subtitle>Propietario: {{ estacionamiento.nombreUsuario }} {{ estacionamiento.nombreApellido }}</ion-card-subtitle>
+            </ion-item>
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          Descripcion: {{ estacionamiento.descripcion }}
+        </ion-card-content>
+        <ion-button expand="full" (click)="presentAlert()">Arrendar</ion-button>
+      <ion-alert trigger="present-alert" header="Arriendo Realizado" message="Se realizó el arriendo exitosamente"
+        [buttons]="alertButtons"></ion-alert>
+      </ion-card>
+    </div>
+  </ion-content>
+  
+  
+</div>
+

@@ -3,9 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { Usuario } from '../interfaces/idb';
+import { Usuario, Estacionamiento } from '../interfaces/idb';
 import { tap } from 'rxjs/operators';
-
 
 @Injectable({
   providedIn: 'root',
@@ -23,11 +22,17 @@ export class SdbService {
     );
   }
   
-  obtenerUsuarioPorCorreo(correo: string): Observable<Usuario | undefined> {
+  obtenerUsuarioPorCorreo(correo: string): Observable<Usuario | null> {
     return this.httpClient.get<Usuario[]>(`${environment.apiURL}/usuario`).pipe(
       map((usuarios: Usuario[]) => {
-        return usuarios.find((usuario) => usuario.correo === correo);
+        return usuarios.find((usuario) => usuario.correo === correo) || null;
       })
+    );
+  }
+
+  obtenerEstacionamientos(): Observable<Estacionamiento[]> {
+    return this.httpClient.get<Estacionamiento[]>(`${environment.apiURL}/estacionamiento`).pipe(
+      tap(estacionamientos => console.log('Usuarios obtenidos:', estacionamientos))
     );
   }
 }
