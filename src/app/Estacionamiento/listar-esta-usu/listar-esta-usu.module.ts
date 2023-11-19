@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ModificaDatosPageRoutingModule } from './modifica-datos-routing.module';
+import { ListarEstaUsuPageRoutingModule } from './listar-esta-usu-routing.module';
 
-import { ModificaDatosPage } from './modifica-datos.page';
+import { ListarEstaUsuPage } from './listar-esta-usu.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ModificaDatosPageRoutingModule
+    ListarEstaUsuPageRoutingModule
   ],
-  declarations: [ModificaDatosPage]
+  declarations: [ListarEstaUsuPage]
 })
-export class ModificaDatosPageModule {}
+export class ListarEstaUsuPageModule {}

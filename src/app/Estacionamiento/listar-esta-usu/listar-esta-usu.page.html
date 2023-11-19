@@ -33,42 +33,48 @@
       <ion-buttons slot="start" class="menu-button">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
+      <!-- Agregar un botón "+" en el lado derecho de la barra de herramientas -->
+      <ion-buttons slot="end">
+        <ion-button class="boton-agregar"  [routerLink]="['/agregrar-esta']">
+          <ion-icon name="add" class="add"></ion-icon>
+        </ion-button>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
-   
-  
     <div class="centered-container">
       <div class="title-card">
         <div class="title">
           <ion-icon name="navigate" class="icon"></ion-icon>
-          Estacionamientos En tu Zona
+          Tus Estacionamientos
         </div>
       </div>
+
+      <!-- Mostrar mensaje si no hay estacionamientos -->
+      <ng-container *ngIf="estacionamientos.length === 0">
+        <p style="color: white;">
+          No tienes estacionamientos ahora mismo.
+        </p>
+      </ng-container>
+
+      <!-- Itera sobre los estacionamientos y muestra la información de cada uno -->
       <ion-card *ngFor="let estacionamiento of estacionamientos">
         <img alt="Silhouette of mountains" src="assets/img/estacionamiento2.jpeg" />
         <ion-card-header>
           <ion-card-title>{{ estacionamiento.direccion }}</ion-card-title>
-          
           <ion-card-subtitle>
-            <ion-item lines="none">
-              <ion-card-subtitle>Propietario: {{ estacionamiento.nombreUsuario }} {{ estacionamiento.nombreApellido }}</ion-card-subtitle>
-              <ion-card-subtitle>Tarifa: {{ estacionamiento.tarifa }}</ion-card-subtitle>
-            </ion-item>
+            Propietario: {{ estacionamiento.correo }}
           </ion-card-subtitle>
         </ion-card-header>
         <ion-card-content>
-          
           Descripcion: {{ estacionamiento.descripcion }}
         </ion-card-content>
-        <ion-button expand="full" (click)="presentAlert()">Arrendar</ion-button>
-      <ion-alert trigger="present-alert" header="Arriendo Realizado" message="Se realizó el arriendo exitosamente"
-        [buttons]="alertButtons"></ion-alert>
+        <ion-button expand="full">Modificar</ion-button>
       </ion-card>
+      
     </div>
   </ion-content>
-  
   
 </div>
 

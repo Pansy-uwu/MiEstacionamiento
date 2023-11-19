@@ -17,8 +17,8 @@ export interface Estacionamiento{
 	direccion: String;
 	tarifa: Number;
 	disponibilidad: boolean;
+	descripcion: string;
 	correo: string;
-	
 }
 
 export interface Data {

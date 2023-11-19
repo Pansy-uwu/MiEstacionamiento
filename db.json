@@ -42,7 +42,7 @@
       "direccion": "Calle Ejemplo 123",
       "tarifa": 10000,
       "disponibilidad": true,
-      "correo": "sofia.alfaro.galaz@gmail.com",
+      "correo": "so.alfaro@duocuc.cl",
       "descripcion": "Este estacionamiento en arriendo ofrece una solución de estacionamiento conveniente y segura en el corazón del centro de la ciudad.",
       "id": 1
     },
@@ -61,6 +61,13 @@
       "correo": "sofia.alfaro.galaz@gmail.com",
       "descripcion": "Este estacionamiento en arriendo ofrece una solución de estacionamiento conveniente y segura en el corazón del centro de la ciudad.",
       "id": 3
+    },
+    {
+      "direccion": "Pasaje Gorrion",
+      "tarifa": "15000",
+      "descripcion": "OLAAAAAAAAA",
+      "disponibilidad": true,
+      "id": 4
     }
   ]
 }

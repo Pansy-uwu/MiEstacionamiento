@@ -39,4 +39,9 @@ export class PerfilPage implements OnInit {
       console.error('Usuario no autenticado');
     }
   }
+
+  cerrarSesion() {
+    this.authService.cerrarSesion();
+    // Puedes agregar más lógica después de cerrar la sesión si es necesario
+  }
 }

@@ -1,13 +1,100 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>agregrar-esta</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">agregrar-esta</ion-title>
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar class="custom-toolbar">
+      <ion-title>Bienvenido</ion-title>
     </ion-toolbar>
   </ion-header>
-</ion-content>
+  <ion-content class="ion-padding">
+    <ion-list class="menu-list">
+      <ion-item-group>
+        <ion-item [routerLink]="['/listar-esta']" routerDirection="forward" class="menu-item" detail="false">
+          <ion-icon name="home"></ion-icon> Inicio
+        </ion-item>
+        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false">
+          <ion-icon name="pint"></ion-icon> Mis Arriendos
+        </ion-item>
+        <ion-item [routerLink]="['/perfil']" routerDirection="forward" class="menu-item" detail="false">
+          <ion-icon name="person"></ion-icon> Perfil
+        </ion-item>
+        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false">
+          <ion-icon name="settings"></ion-icon> Configuración
+        </ion-item>
+        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false">
+          <ion-icon name="log-in"></ion-icon> Salir
+        </ion-item>
+      </ion-item-group>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content" scrollY="true">
+  <ion-header>
+    <ion-toolbar class="custom-toolbar">
+      <ion-buttons slot="start" class="menu-button">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <div class="centered-container">
+      <div class="title">
+        <ion-icon name="information-circle-outline" class="icon"></ion-icon>
+        Ingrese los datos
+      </div>
+      <div class="input-container">
+        <form [formGroup]="formularioEstacionamiento" (ngSubmit)="agregarEstacionamiento()" novalidate>
+          <ion-item class="custom-input">
+            <ion-label class="custom-label" position="floating">Dirección</ion-label>
+            <ion-input class="custom-input-field" placeholder="" formControlName="direccion" required></ion-input>
+          </ion-item>
+    
+          <br>
+    
+          <ion-item class="custom-input">
+            <ion-label class="custom-label" position="floating">Tarifa</ion-label>
+            <ion-input class="custom-input-field" formControlName="tarifa" placeholder="" required></ion-input>
+          </ion-item>
+    
+          <br>
+    
+          <ion-item class="custom-input">
+            <ion-label class="custom-label" position="floating">Descripción</ion-label>
+            <ion-input class="custom-input-field" formControlName="descripcion" placeholder="" required></ion-input>
+          </ion-item>
+    
+          <br>
+    
+          <ion-item class="custom-input">
+            <ion-label class="custom-label">Disponibilidad</ion-label>
+            <ion-toggle class="custom-input-field" formControlName="disponibilidad"></ion-toggle>
+          </ion-item>
+    
+          <br>
+    
+          <!-- Muestra mensajes de error debajo de cada campo -->
+          <div *ngIf="formularioEstacionamiento.controls['direccion'].invalid && (formularioEstacionamiento.controls['direccion'].dirty || formularioEstacionamiento.controls['direccion'].touched)">
+            <ion-text color="danger">La dirección es requerida y debe tener como máximo 100 caracteres.</ion-text>
+          </div>
+          
+          <!-- Para la tarifa -->
+          <div *ngIf="formularioEstacionamiento.controls['tarifa'].invalid && (formularioEstacionamiento.controls['tarifa'].dirty || formularioEstacionamiento.controls['tarifa'].touched)">
+            <ion-text color="danger">La tarifa es requerida y debe ser un número válido.</ion-text>
+          </div>
+          
+          <!-- Para la descripción -->
+          <div *ngIf="formularioEstacionamiento.controls['descripcion'].invalid && (formularioEstacionamiento.controls['descripcion'].dirty || formularioEstacionamiento.controls['descripcion'].touched)">
+            <ion-text color="danger">La descripción es requerida y debe tener como máximo 500 caracteres.</ion-text>
+          </div>
+    
+          <!-- Botón para enviar el formulario -->
+          <ion-button type="submit" expand="full">Agregar</ion-button>
+        </form>
+      </div>
+    </div>
+    
+  </ion-content>
+  
+  
+</div>
+
