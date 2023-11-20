@@ -78,4 +78,9 @@ export class ModificarEstaPage implements OnInit {
       }
     }
   }
+
+  cerrarSesion() {
+    this.authService.cerrarSesion();
+    // Puedes agregar más lógica después de cerrar la sesión si es necesario
+  }
 }

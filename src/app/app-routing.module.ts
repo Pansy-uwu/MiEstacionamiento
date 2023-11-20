@@ -38,9 +38,6 @@ const routes: Routes = [
     path: 'listar-esta-usu',
     loadChildren: () => import('./Estacionamiento/listar-esta-usu/listar-esta-usu.module').then( m => m.ListarEstaUsuPageModule)
   },
-<<<<<<< Updated upstream
-
-=======
   {
     path: 'listar-tar',
     loadChildren: () => import('./Tarjeta/listar-tar/listar-tar.module').then( m => m.ListarTarPageModule)
@@ -57,7 +54,6 @@ const routes: Routes = [
     path: 'eliminar-tar',
     loadChildren: () => import('./Tarjeta/eliminar-tar/eliminar-tar.module').then( m => m.EliminarTarPageModule)
   }
->>>>>>> Stashed changes
 
 
 

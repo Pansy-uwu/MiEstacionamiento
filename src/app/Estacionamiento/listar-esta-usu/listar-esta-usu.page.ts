@@ -92,6 +92,9 @@ export class ListarEstaUsuPage implements OnInit {
     await alert.present();
   }
   
-  
+  cerrarSesion() {
+    this.authService.cerrarSesion();
+    // Puedes agregar más lógica después de cerrar la sesión si es necesario
+  }
   
 }

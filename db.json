@@ -8,66 +8,21 @@
       "id": 1
     },
     {
-      "correo": "so.alfaro@duocuc.cl",
+      "correo": "so.alfaro@duouc.cl",
       "nombre": "Sofia",
       "apellido": "Alfaro",
-      "contrasena": "1234",
+      "contrasena": "hola12",
       "id": 2
-    }
-  ],
-  "arriendo": [
-    {
-      "direccion": "Calle Ejemplo 123",
-      "tarifa": 10.5,
-      "disponibilidad": true,
-      "correo": "sofia.alfaro.galaz@gmail.com",
-      "id": 1
     }
   ],
   "estacionamiento": [
     {
       "direccion": "Pasaje Gorrion",
       "tarifa": "3444",
-      "descripcion": "gsdfgs",
+      "descripcion": " Este estacionamiento en arriendo ofrece una solución de estacionamiento conveniente y segura en el corazón del centro de la ciudad.",
       "disponibilidad": true,
-      "correo": "so.alfaro@duocuc.cl",
+      "correo": "sofia.alfaro.galaz@gmail.com",
       "id": 2
-    }
-  ],
-<<<<<<< Updated upstream
-  "routes": {
-    "/modificarEstacionamiento/:id": "/estacionamiento/:id"
-  }
-=======
-  "tarjeta": [
-    {
-      "number": "8473 9340 8954 2093",
-      "name": "Sofia",
-      "expiricy": "03/30",
-      "cvc": "353",
-      "id": 1
-    },
-    {
-      "number": "9573 0953 5223 2098",
-      "name": "Sofia",
-      "expiricy": "03/26",
-      "cvc": "734",
-      "id": 2
-    },
-    {
-      "number": "2347 9854 2354 9053",
-      "name": "Sofia",
-      "expiricy": "03/29",
-      "cvc": "843",
-      "id": 3
-    },
-    {
-      "number": "8934 0203 2034 4894",
-      "name": "Sofia",
-      "expiricy": "03/28",
-      "cvc": "984",
-      "id": 4
     }
   ]
->>>>>>> Stashed changes
 }

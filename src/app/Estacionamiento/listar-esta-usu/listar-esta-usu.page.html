@@ -10,16 +10,16 @@
         <ion-item [routerLink]="['/listar-esta']" routerDirection="forward" class="menu-item" detail="false">
           <ion-icon name="home"></ion-icon> Inicio
         </ion-item>
-        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false">
+        <ion-item routerDirection="forward" class="menu-item" detail="false">
           <ion-icon name="pint"></ion-icon> Mis Arriendos
         </ion-item>
         <ion-item [routerLink]="['/perfil']" routerDirection="forward" class="menu-item" detail="false">
           <ion-icon name="person"></ion-icon> Perfil
         </ion-item>
-        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false">
+        <ion-item routerDirection="forward" class="menu-item" detail="false">
           <ion-icon name="settings"></ion-icon> Configuración
         </ion-item>
-        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false">
+        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false" (click)="cerrarSesion()">
           <ion-icon name="log-in"></ion-icon> Salir
         </ion-item>
       </ion-item-group>

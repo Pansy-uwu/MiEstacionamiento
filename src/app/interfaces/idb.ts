@@ -8,7 +8,8 @@ export interface Usuario {
 export interface Arriendo{
 	fecIn: Date;
 	fecTer: Date;
-	calificacion: number;
+	idesta: number;
+	tarjeta: number;
 	correo: string;
 	
 }

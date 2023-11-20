@@ -4,6 +4,7 @@ import { SdbService } from 'src/app/services/sdb.service';
 import { forkJoin } from 'rxjs';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { AutenticacionService } from 'src/app/services/autenticación.service';
 
 @Component({
   selector: 'app-listar-esta',
@@ -14,7 +15,8 @@ export class ListarEstaPage implements OnInit {
   estacionamientos: any[] = [];
   public alertButtons = ['OK'];
 
-  constructor(private sdbService: SdbService, private alertController: AlertController, private router: Router) {}
+  constructor(private sdbService: SdbService, private alertController: AlertController, private router: Router,
+    private authService: AutenticacionService) {}
 
   ngOnInit() {
     this.obtenerEstacionamientosConNombres();
@@ -49,5 +51,10 @@ export class ListarEstaPage implements OnInit {
         });
       });
     });
+  }
+
+  cerrarSesion() {
+    this.authService.cerrarSesion();
+    // Puedes agregar más lógica después de cerrar la sesión si es necesario
   }
 }

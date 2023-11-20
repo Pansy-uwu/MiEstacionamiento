@@ -66,4 +66,9 @@ export class AgregrarEstaPage implements OnInit {
       this.formularioEstacionamiento.markAllAsTouched();
     }
   }
+
+  cerrarSesion() {
+    this.authService.cerrarSesion();
+    // Puedes agregar más lógica después de cerrar la sesión si es necesario
+  }
 }

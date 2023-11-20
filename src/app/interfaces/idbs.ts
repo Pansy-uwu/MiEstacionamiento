@@ -11,7 +11,8 @@ export interface Usuarios {
 	id: number;
 	fecIn: Date;
 	fecTer: Date;
-	calificacion: number;
+	idesta: number;
+	tarjeta: number;
 	correo: string;
   }
   
