@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SdbService } from 'src/app/services/sdb.service';
 import { Router } from '@angular/router';
+import { AutenticacionService } from 'src/app/services/autenticación.service';
 
 @Component({
   selector: 'app-modificar-esta',
@@ -17,7 +18,8 @@ export class ModificarEstaPage implements OnInit {
     private formBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute,
     private sdbService: SdbService,
-    private router: Router
+    private router: Router,
+    private authService: AutenticacionService // Inyecta el servicio de autenticación
   ) {
     this.formularioEstacionamiento = this.formBuilder.group({
       direccion: ['', [Validators.required, Validators.maxLength(100)]],
@@ -55,17 +57,25 @@ export class ModificarEstaPage implements OnInit {
 
   modificarEstacionamiento() {
     if (this.formularioEstacionamiento.valid && this.estacionamientoId !== null) {
-      const valoresFormulario = this.formularioEstacionamiento.value;
+      // Obtén el correo del usuario autenticado desde el servicio de autenticación
+      const correoUsuario = this.authService.usuarioData?.correo;
 
-      this.sdbService.modificarEstacionamiento(this.estacionamientoId, valoresFormulario).subscribe(
-        (respuesta) => {
-          console.log('Estacionamiento modificado con éxito', respuesta);
-          this.router.navigate(['/listar-esta-usu']);
-        },
-        (error) => {
-          console.error('Error al modificar estacionamiento', error);
-        }
-      );
+      if (correoUsuario) {
+        const valoresFormulario = {
+          ...this.formularioEstacionamiento.value,
+          correo: correoUsuario,
+        };
+
+        this.sdbService.modificarEstacionamiento(this.estacionamientoId, valoresFormulario).subscribe(
+          (respuesta) => {
+            console.log('Estacionamiento modificado con éxito', respuesta);
+            this.router.navigate(['/listar-esta-usu']);
+          },
+          (error) => {
+            console.error('Error al modificar estacionamiento', error);
+          }
+        );
+      }
     }
   }
 }

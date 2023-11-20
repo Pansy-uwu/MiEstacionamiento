@@ -7,6 +7,7 @@ import { Usuario, Estacionamiento } from '../interfaces/idb';
 import { Estacionamientos } from '../interfaces/idbs';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { EventoService } from './evento.service';
 
 
 @Injectable({
@@ -14,7 +15,7 @@ import { throwError } from 'rxjs';
 })
 export class SdbService {
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private eventoService: EventoService) {}
 
   crearCliente(newCliente: Usuario): Observable<Usuario> {
     return this.httpClient.post<Usuario>(`${environment.apiURL}/usuario`, newCliente);
@@ -30,9 +31,14 @@ export class SdbService {
     return this.httpClient.get<Usuario[]>(`${environment.apiURL}/usuario`).pipe(
       map((usuarios: Usuario[]) => {
         return usuarios.find((usuario) => usuario.correo === correo) || null;
+      }),
+      catchError((error: HttpErrorResponse) => {
+        console.error('Error al obtener usuario por correo:', error);
+        return throwError(error); // Puedes lanzar un nuevo observable de error o retornar algún valor predeterminado
       })
     );
-}
+  }
+  
 
   obtenerEstacionamientos(): Observable<Estacionamientos[]> {
     return this.httpClient.get<Estacionamientos[]>(`${environment.apiURL}/estacionamiento`).pipe(
@@ -66,12 +72,14 @@ export class SdbService {
 
   modificarEstacionamiento(estacionamientoId: number, valoresFormulario: any): Observable<any> {
     return this.httpClient.put(`${environment.apiURL}/estacionamiento/${estacionamientoId}`, valoresFormulario)
-      .pipe(
-        catchError((error) => {
-          console.error('Error en la solicitud de modificación', error);
-          throw error;
-        })
-      );
+    .pipe(
+      tap(() => this.eventoService.notificarActualizacion())
+  );
+  }
+
+  eliminarEstacionamiento(id: string): Observable<void> {
+    const url = `${environment.apiURL}/estacionamiento/${id}`; // Reemplaza con la URL real de tu API
+    return this.httpClient.delete<void>(url);
   }
   
   

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SdbService } from 'src/app/services/sdb.service';
 import { Estacionamiento } from 'src/app/interfaces/idb';
 import { NavController } from '@ionic/angular';
+import { AutenticacionService } from 'src/app/services/autenticación.service';
 
 @Component({
   selector: 'app-agregrar-esta',
@@ -12,7 +13,12 @@ import { NavController } from '@ionic/angular';
 export class AgregrarEstaPage implements OnInit {
   formularioEstacionamiento: FormGroup;
 
-  constructor(private fb: FormBuilder, private navCtrl: NavController, private sdbService: SdbService) {
+  constructor(
+    private fb: FormBuilder,
+    private navCtrl: NavController,
+    private sdbService: SdbService,
+    private authService: AutenticacionService // Inyecta el servicio de autenticación
+  ) {
     this.formularioEstacionamiento = this.fb.group({
       direccion: ['', [Validators.required, Validators.maxLength(100)]],
       tarifa: ['', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?(\.\d*)?$/)]],
@@ -30,22 +36,31 @@ export class AgregrarEstaPage implements OnInit {
 
   agregarEstacionamiento() {
     if (this.formularioEstacionamiento.valid) {
-      const datosEstacionamiento = this.formularioEstacionamiento.value;
+      // Obtén el correo del usuario autenticado desde el servicio de autenticación
+      const correoUsuario = this.authService.usuarioData?.correo;
 
-      // Llamar al servicio para agregar estacionamiento
-      this.sdbService.agregarEstacionamiento(this.formularioEstacionamiento.value).subscribe(
-        (nuevoEstacionamiento: Estacionamiento) => {
-          console.log('Estacionamiento agregado con éxito', nuevoEstacionamiento);
+      if (correoUsuario) {
+        // Combina los datos del formulario con el correo del usuario
+        const datosEstacionamiento = {
+          ...this.formularioEstacionamiento.value,
+          correo: correoUsuario,
+        };
 
-          // Puedes realizar acciones adicionales después de agregar
+        // Llamar al servicio para agregar estacionamiento
+        this.sdbService.agregarEstacionamiento(datosEstacionamiento).subscribe(
+          (nuevoEstacionamiento: Estacionamiento) => {
+            console.log('Estacionamiento agregado con éxito', nuevoEstacionamiento);
 
-          // Redirigir a la página de listar-esta o a donde desees
-          this.navCtrl.navigateForward('/listar-esta');
-        },
-        (error: any) => {
-          console.error('Error al agregar estacionamiento', error);
-        }
-      );
+            // Puedes realizar acciones adicionales después de agregar
+
+            // Redirigir a la página de listar-esta o a donde desees
+            this.navCtrl.navigateForward('/listar-esta');
+          },
+          (error: any) => {
+            console.error('Error al agregar estacionamiento', error);
+          }
+        );
+      }
     } else {
       // Marcar los campos del formulario como tocados para mostrar mensajes de error
       this.formularioEstacionamiento.markAllAsTouched();

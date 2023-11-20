@@ -8,24 +8,11 @@
       "id": 1
     },
     {
-      "correo": "sofia.alfaro.galaz@ail.com",
-      "nombre": "sofia",
-      "apellido": "akf",
-      "contrasena": "miau123",
-      "id": 2
-    },
-    {
       "correo": "so.alfaro@duocuc.cl",
       "nombre": "Sofia",
       "apellido": "Alfaro",
       "contrasena": "1234",
-      "id": 3
-    },
-    {
-      "correo": "so.alo@duocuc.cl",
-      "nombre": "asd",
-      "contrasena": "asd",
-      "id": 3
+      "id": 2
     }
   ],
   "arriendo": [
@@ -39,43 +26,12 @@
   ],
   "estacionamiento": [
     {
-      "direccion": "Calle Ejemplo 123",
-      "tarifa": 10000,
-      "disponibilidad": true,
-      "correo": "so.alfaro@duocuc.cl",
-      "descripcion": "Este estacionamiento en arriendo ofrece una solución de estacionamiento conveniente y segura en el corazón del centro de la ciudad.",
-      "id": 1
-    },
-    {
-      "direccion": "Calle Ejemplo 123",
-      "tarifa": "111112323",
-      "descripcion": "Este estacionamiento en arriendo ofrece una solución de estacionamiento conveniente y segura en el corazón del centro de la ciudad.",
-      "correo": "so.alfaro@duocuc.cl",
-      "disponibilidad": false,
-      "id": 2
-    },
-    {
-      "direccion": "Calle Ejemplo 100003",
-      "tarifa": 10000,
-      "disponibilidad": true,
-      "correo": "sofia.alfaro.galaz@gmail.com",
-      "descripcion": "Este estacionamiento en arriendo ofrece una solución de estacionamiento conveniente y segura en el corazón del centro de la ciudad.",
-      "id": 3
-    },
-    {
       "direccion": "Pasaje Gorrion",
-      "tarifa": "15000",
-      "descripcion": "OLAAAAAAAAA",
+      "tarifa": "3444",
+      "descripcion": "gsdfgs",
+      "disponibilidad": true,
       "correo": "so.alfaro@duocuc.cl",
-      "disponibilidad": true,
-      "id": 4
-    },
-    {
-      "direccion": "Calle Ejemplo 123",
-      "tarifa": "15000",
-      "descripcion": "Este estacionamiento en arriendo ofrece una solución de estacionamiento conveniente y segura en el corazón del centro de la ciudad.",
-      "disponibilidad": true,
-      "id": 5
+      "id": 2
     }
   ],
   "routes": {

@@ -30,14 +30,20 @@ export class AutenticacionService {
   iniciarSesion(correo: string, contrasena: string) {
     this.obtenerUsuarioAutenticado(correo, contrasena).pipe(
       switchMap((usuarioEncontrado: Usuario | undefined) => {
-        this.usuarioData = usuarioEncontrado;
-        return this.obtenerEstacionamientosPorCorreo(correo);
+        if (usuarioEncontrado) {
+          this.usuarioData = usuarioEncontrado;
+          return this.obtenerEstacionamientosPorCorreo(correo);
+        } else {
+          // Manejar el caso de usuario no encontrado
+          return [];
+        }
       })
     ).subscribe((estacionamientos: any[]) => {
       this.usuarioAutenticadoSubject.next(true);
       console.log('Inicio de sesión exitoso');
     });
   }
+  
 
   cerrarSesion(): void {
     this.usuarioAutenticadoSubject.next(false);
