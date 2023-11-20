@@ -26,3 +26,10 @@ export interface Data {
 	arriendo: Arriendo[];
 	estacionamiento: Estacionamiento[];
 }
+
+export interface Tarjeta{
+	number: number,
+	name: string,
+	expiricy: Date,
+	cvc: number,
+}

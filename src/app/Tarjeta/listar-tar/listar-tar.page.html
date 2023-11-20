@@ -1,0 +1,80 @@
+<!-- app-agregar-tar.page.html -->
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar class="custom-toolbar">
+      <ion-title>Bienvenido</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list class="menu-list">
+      <ion-item-group>
+        <ion-item [routerLink]="['/listar-esta']" routerDirection="forward" class="menu-item" detail="false">
+          <ion-icon name="home"></ion-icon> Inicio
+        </ion-item>
+        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false">
+          <ion-icon name="pint"></ion-icon> Mis Arriendos
+        </ion-item>
+        <ion-item [routerLink]="['/perfil']" routerDirection="forward" class="menu-item" detail="false">
+          <ion-icon name="person"></ion-icon> Perfil
+        </ion-item>
+        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false">
+          <ion-icon name="settings"></ion-icon> Configuración
+        </ion-item>
+        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false">
+          <ion-icon name="log-in"></ion-icon> Salir
+        </ion-item>
+      </ion-item-group>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content" scrollY="true">
+  <ion-header>
+    <ion-toolbar class="custom-toolbar">
+      <ion-buttons slot="start" class="menu-button">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <!-- Agregar un botón "+" en el lado derecho de la barra de herramientas -->
+      <ion-buttons slot="end">
+        <ion-button class="boton-agregar" [routerLink]="['/agregar-tar']">
+          <ion-icon name="add" class="add"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <div class="centered-container">
+      <div class="title-card">
+        <div class="title">
+          <ion-icon name="card" class="icon"></ion-icon>
+          Tus Tarjetas de Crédito
+        </div>
+      </div>
+
+      <!-- Mostrar mensaje si no hay tarjetas -->
+      <ng-container *ngIf="tarjetas.length === 0">
+        <p style="color: white;">
+          No tienes tarjetas de crédito agregadas.
+        </p>
+      </ng-container>
+
+      <!-- Itera sobre las tarjetas de crédito y muestra la información de cada una -->
+      <ion-card *ngFor="let tarjeta of tarjetas">
+        <ion-card-header>
+          <ion-card-title>{{ tarjeta.name }}</ion-card-title>
+          <ion-card-subtitle>
+            Número de Tarjeta: {{ tarjeta.number }}
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          Fecha de Vencimiento: {{ tarjeta.expiricy }}<br>
+          CVC: {{ tarjeta.cvc }}
+        </ion-card-content>
+        <ion-button expand="full">Modificar</ion-button>
+      </ion-card>
+    </div>
+
+    <ion-button expand="full">Agregar</ion-button>
+  </ion-content>
+</div>

@@ -30,3 +30,10 @@ export interface Usuarios {
 	estacionamiento: Estacionamientos[];
   }
   
+  export interface Tarjeta{
+	number: number,
+	name: string,
+	expiricy: Date,
+	cvc: number,
+	id: number
+}
