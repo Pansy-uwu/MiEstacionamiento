@@ -11,10 +11,6 @@ const routes: Routes = [
     loadChildren: () => import('./Cliente/perfil/perfil.module').then( m => m.PerfilPageModule)
   },
   {
-  path: 'en-curso',
-  loadChildren: () => import('./en-curso/en-curso.module').then( m => m.EnCursoPageModule)
-},
-  {
     path: 'login',
     loadChildren: () => import('./Cliente/login/login.module').then( m => m.LoginPageModule)
   },
@@ -35,7 +31,7 @@ const routes: Routes = [
     loadChildren: () => import('./Estacionamiento/agregrar-esta/agregrar-esta.module').then( m => m.AgregrarEstaPageModule)
   },
   {
-    path: 'modificar-esta',
+    path: 'modificar-esta/:id',
     loadChildren: () => import('./Estacionamiento/modificar-esta/modificar-esta.module').then( m => m.ModificarEstaPageModule)
   },
   {

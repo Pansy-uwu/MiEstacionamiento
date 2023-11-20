@@ -50,4 +50,32 @@ export class SdbService {
     return this.httpClient.post<Estacionamiento>(`${environment.apiURL}/estacionamiento`, newEstacionamiento);
   }
 
+  obtenerEstacionamientoPorId(estacionamientoId: number): Observable<Estacionamientos> {
+    return this.httpClient.get<Estacionamientos>(`${environment.apiURL}/estacionamiento/${estacionamientoId}`).pipe(
+      tap(estacionamiento => {
+        console.log('Enviando solicitud para el estacionamiento con ID:', estacionamientoId);
+        console.log('Estacionamiento obtenido por ID:', estacionamiento);
+      }),
+      catchError(error => {
+        console.error('Error al obtener estacionamiento por ID:', error);
+        throw error; // Reenviar el error para que lo manejen las partes interesadas
+      })
+    );
+  }
+  
+
+  modificarEstacionamiento(estacionamientoId: number, valoresFormulario: any): Observable<any> {
+    return this.httpClient.put(`${environment.apiURL}/estacionamiento/${estacionamientoId}`, valoresFormulario)
+      .pipe(
+        catchError((error) => {
+          console.error('Error en la solicitud de modificación', error);
+          throw error;
+        })
+      );
+  }
+  
+  
+  
+  
+  
 }

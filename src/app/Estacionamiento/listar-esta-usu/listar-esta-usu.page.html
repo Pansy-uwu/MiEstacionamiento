@@ -59,7 +59,7 @@
       </ng-container>
 
       <!-- Itera sobre los estacionamientos y muestra la información de cada uno -->
-      <ion-card *ngFor="let estacionamiento of estacionamientos">
+      <ion-card *ngFor="let estacionamiento of estacionamientos" >
         <img alt="Silhouette of mountains" src="assets/img/estacionamiento2.jpeg" />
         <ion-card-header>
           <ion-card-title>{{ estacionamiento.direccion }}</ion-card-title>
@@ -70,7 +70,7 @@
         <ion-card-content>
           Descripcion: {{ estacionamiento.descripcion }}
         </ion-card-content>
-        <ion-button expand="full">Modificar</ion-button>
+        <ion-button expand="full" [routerLink]="['/modificar-esta', estacionamiento.id]">Modificar</ion-button>
       </ion-card>
       
     </div>

@@ -1,0 +1,88 @@
+/* CSS GENERAL */
+ion-toolbar.custom-toolbar {
+    --background: rgb(234, 242, 249);
+    color: rgb(27, 50, 95);
+  }
+  
+  ion-menu-button{
+    color: rgb(27, 50, 95);
+  }
+  .menu-item {
+    width: 100%;
+    ion-icon {
+      margin-right: 8px;
+      color: rgb(27, 50, 95);
+    }
+    font-size: 18px;
+    color: rgb(27, 50, 95);
+    padding: 10px;
+    --inner-padding-end: 0;
+    --border-width: 0;
+    --highlight-background: transparent;
+    cursor: pointer;
+  }
+
+  ion-button {
+    --background: rgb(242, 120, 92);
+    --background-hover: rgb(215, 119, 97);
+    --background-activated: rgb(242,108,79);
+    --background-focused: rgb(242,108,79);
+  
+    --color: rgb(255, 255, 255);
+  
+    --border-radius: 0;
+    --border-color: rgb(242,108,79);
+    --border-style: solid;
+    --border-width: 1px;
+  
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+  
+    --ripple-color: deeppink;
+  
+    --width: 50%;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+  }
+  .input-container {
+    width: 75%;
+    margin-top: 20px; /* Ajusta la distancia desde la parte superior */
+    margin-bottom: 110px; /* Ajusta la distancia desde la parte inferior */
+  }
+  .custom-input {
+    width: 100%; /* Ancho personalizado del ion-item */
+    background: rgb(58,137,201); /* Color de fondo del ion-item */
+    border-radius: 8px; /* Bordes redondeados del ion-item */
+  }
+  
+  .custom-label {
+    color: rgb(58,137,201); /* Color del texto de la etiqueta */
+  }
+  
+  .custom-input-field {
+    border-bottom: 2px solid rgb(58,137,201); /* Color y estilo del borde inferior del ion-input */
+    color: rgb(58,137,201); /* Color del texto del ion-input */
+  }
+  
+  .centered-container {
+    display: flex;
+    flex-direction: column; /* Para apilar los contenedores verticalmente */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(156,196,228);
+  }
+
+  .title {
+    color: white; /* Color del texto del título */
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .icon {
+    font-size: 2em; /* Tamaño del icono */
+    margin-right: 10px; /* Espaciado entre el icono y el texto del título */
+  }
