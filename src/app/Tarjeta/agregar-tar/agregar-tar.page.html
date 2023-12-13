@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="custom-toolbar">
     <ion-title>
       Agregar Tarjeta de Crédito
     </ion-title>
@@ -7,6 +7,7 @@
 </ion-header>
 
 <ion-content>
+  <div class="centered-container">
   <ion-card>
     <ion-card-header>
       Detalles de la Tarjeta
@@ -37,4 +38,5 @@
 
   <ion-button expand="full" (click)="submitForm()">Agregar Tarjeta</ion-button>
   <ion-button expand="full" [routerLink]="['/perfil']" routerDirection="forward">Volver</ion-button>
+</div>
 </ion-content>

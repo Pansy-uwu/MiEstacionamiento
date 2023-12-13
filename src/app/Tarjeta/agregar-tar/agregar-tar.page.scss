@@ -1,0 +1,129 @@
+/* CSS GENERAL */
+
+ion-toolbar.custom-toolbar {
+    --background: rgb(234, 242, 249);
+    color: rgb(27, 50, 95);
+  }
+  
+  ion-menu-button{
+    color: rgb(27, 50, 95);
+  }
+
+  .menu-item {
+    width: 100%;
+    ion-icon {
+      margin-right: 8px;
+      color: rgb(27, 50, 95);
+    }
+    font-size: 18px;
+    color: rgb(27, 50, 95);
+    padding: 10px;
+    --inner-padding-end: 0;
+    --border-width: 0;
+    --highlight-background: transparent;
+    cursor: pointer;
+  }
+  
+  ion-button {
+    --background: rgb(242, 120, 92);
+    --background-hover: rgb(215, 119, 97);
+    --background-activated: rgb(242,108,79);
+    --background-focused: rgb(242,108,79);
+  
+    --color: rgb(255, 255, 255);
+  
+    --border-radius: 0;
+    --border-color: rgb(242,108,79);
+    --border-style: solid;
+    --border-width: 1px;
+  
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+  
+    --ripple-color: deeppink;
+  
+    --width: 50%;
+
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    
+  }
+
+  
+  .centered-container {
+    display: flex;
+    flex-direction: column; /* Para apilar los contenedores verticalmente */
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(156,196,228);
+  }
+  
+
+  .title-card {
+    
+    height: 7vh;
+    background-color: rgb(156,196,228); /* Color de fondo del título e icono */
+  }
+  
+  .title {
+    color: white; /* Color del texto del título */
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .icon {
+    font-size: 2em; /* Tamaño del icono */
+    margin-right: 10px; /* Espaciado entre el icono y el texto del título */
+  }
+
+  .add {
+    font-size: 1.7em; /* Tamaño del icono */
+    margin-right: 10px; /* Espaciado entre el icono y el texto del título */
+    color: rgb(27, 50, 95);
+  }
+  
+  ion-card {
+    margin-top: 20px;
+    width: 100%; /* O ajusta según tus necesidades */
+  }
+  
+  ion-card-title {
+    font-size: 1.8em;
+    width: 500%;
+  }
+  
+  ion-card-subtitle {
+    font-size: 1em;
+  }
+  
+  ion-card-content {
+    margin-top: 10px;
+  }
+
+  /* styles.scss o styles.css */
+.boton-agregar {
+  --background: rgb(234, 242, 249);
+    --background-hover: rgb(234, 242, 249);
+    --background-activated: rgb(234, 242, 249);
+    --background-focused: rgb(234, 242, 249);
+  
+    --color: rgb(255, 255, 255);
+  
+    --border-radius: 0;
+    --border-color: rgb(234, 242, 249);
+    --border-style: solid;
+    --border-width: 1px;
+  
+    --box-shadow: 0 2px 6px 0 rgba(255, 255, 255, 0.25);
+  
+    --ripple-color: deeppink;
+  
+    --width: 50%;
+
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    
+}
