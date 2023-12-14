@@ -53,6 +53,10 @@ const routes: Routes = [
   {
     path: 'eliminar-tar',
     loadChildren: () => import('./Tarjeta/eliminar-tar/eliminar-tar.module').then( m => m.EliminarTarPageModule)
+  },
+  {
+    path: 'listar-esta-usr',
+    loadChildren: () => import('./Estacionamiento/listar-esta-usr/listar-esta-usr.module').then( m => m.ListarEstaUsrPageModule)
   }
 
 

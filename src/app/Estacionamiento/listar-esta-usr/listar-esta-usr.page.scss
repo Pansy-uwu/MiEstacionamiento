@@ -78,12 +78,6 @@ ion-toolbar.custom-toolbar {
     font-size: 2em; /* Tamaño del icono */
     margin-right: 10px; /* Espaciado entre el icono y el texto del título */
   }
-
-  .add {
-    font-size: 1.7em; /* Tamaño del icono */
-    margin-right: 10px; /* Espaciado entre el icono y el texto del título */
-    color: rgb(27, 50, 95);
-  }
   
   ion-card {
     margin-top: 20px;
@@ -102,53 +96,3 @@ ion-toolbar.custom-toolbar {
   ion-card-content {
     margin-top: 10px;
   }
-
-  /* styles.scss o styles.css */
-.boton-agregar {
-  --background: rgb(234, 242, 249);
-    --background-hover: rgb(234, 242, 249);
-    --background-activated: rgb(234, 242, 249);
-    --background-focused: rgb(234, 242, 249);
-  
-    --color: rgb(255, 255, 255);
-  
-    --border-radius: 0;
-    --border-color: rgb(234, 242, 249);
-    --border-style: solid;
-    --border-width: 1px;
-  
-    --box-shadow: 0 2px 6px 0 rgba(255, 255, 255, 0.25);
-  
-    --ripple-color: deeppink;
-  
-    --width: 50%;
-
-    --padding-top: 10px;
-    --padding-bottom: 10px;
-    
-}
-
-/* listar-tar.page.scss */
-
-ion-card {
-  width: 80%;
-  margin: 20px auto;
-  border: 2px solid #ffffff; /* Color del borde de la tarjeta */
-  border-radius: 10px; /* Radio de borde para esquinas redondeadas */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto tridimensional */
-
-  ion-card-header {
-    background-color: #ffffff; /* Color de fondo del encabezado de la tarjeta */
-    color: #fff; /* Color del texto del encabezado de la tarjeta */
-  }
-
-  ion-card-content {
-    padding: 10px;
-  }
-
-  ion-button {
-    margin-top: 10px;
-    background-color: #ffffff; /* Color de fondo del botón */
-    color: #fff; /* Color del texto del botón */
-  }
-}

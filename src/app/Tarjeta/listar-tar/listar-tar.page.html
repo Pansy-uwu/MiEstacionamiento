@@ -1,31 +1,6 @@
 <!-- app-agregar-tar.page.html -->
 <ion-menu contentId="main-content">
-  <ion-header>
-    <ion-toolbar class="custom-toolbar">
-      <ion-title>Bienvenido</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content class="ion-padding">
-    <ion-list class="menu-list">
-      <ion-item-group>
-        <ion-item [routerLink]="['/listar-esta']" routerDirection="forward" class="menu-item" detail="false">
-          <ion-icon name="home"></ion-icon> Inicio
-        </ion-item>
-        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false">
-          <ion-icon name="pint"></ion-icon> Mis Arriendos
-        </ion-item>
-        <ion-item [routerLink]="['/perfil']" routerDirection="forward" class="menu-item" detail="false">
-          <ion-icon name="person"></ion-icon> Perfil
-        </ion-item>
-        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false">
-          <ion-icon name="settings"></ion-icon> Configuración
-        </ion-item>
-        <ion-item [routerLink]="['/login']" routerDirection="forward" class="menu-item" detail="false">
-          <ion-icon name="log-in"></ion-icon> Salir
-        </ion-item>
-      </ion-item-group>
-    </ion-list>
-  </ion-content>
+  <!-- ... (código del menú) ... -->
 </ion-menu>
 
 <div class="ion-page" id="main-content" scrollY="true">
@@ -34,7 +9,6 @@
       <ion-buttons slot="start" class="menu-button">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <!-- Agregar un botón "+" en el lado derecho de la barra de herramientas -->
       <ion-buttons slot="end">
         <ion-button class="boton-agregar" [routerLink]="['/agregar-tar']">
           <ion-icon name="add" class="add"></ion-icon>

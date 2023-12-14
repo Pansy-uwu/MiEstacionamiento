@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AutenticacionService } from 'src/app/services/autenticación.service';
 
 @Component({
   selector: 'app-agregar-tar',
@@ -16,10 +17,16 @@ export class AgregarTarPage implements OnInit {
   submitForm() {
     console.log('Datos de la tarjeta de crédito:', this.creditCard);
   }
-  constructor() { }
+  constructor(private authService: AutenticacionService) { }
 
   ngOnInit() {
     
   }
 
+  cerrarSesion() {
+    this.authService.cerrarSesion();
+    // Puedes agregar más lógica después de cerrar la sesión si es necesario
+  }
 }
+
+

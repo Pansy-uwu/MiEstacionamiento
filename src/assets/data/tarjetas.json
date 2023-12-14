@@ -1,0 +1,18 @@
+{
+"tarjeta": [
+    {
+      "number": "4830 3458 3843 2923",
+      "name": "Sofia Alfaro",
+      "expiricy": "20/26",
+      "cvc": "333",
+      "id": 1
+    },
+    {
+      "number": "5643 9352 4954 3245",
+      "name": "Sofia Alfaro",
+      "expiricy": "02/29",
+      "cvc": "888",
+      "id": 2
+    }
+  ]
+}

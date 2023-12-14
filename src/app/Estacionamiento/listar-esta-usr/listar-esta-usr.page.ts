@@ -1,4 +1,3 @@
-// listar-esta.page.ts
 import { Component, OnInit } from '@angular/core';
 import { SdbService } from 'src/app/services/sdb.service';
 import { forkJoin } from 'rxjs';
@@ -7,30 +6,30 @@ import { AlertController } from '@ionic/angular';
 import { AutenticacionService } from 'src/app/services/autenticación.service';
 
 @Component({
-  selector: 'app-listar-esta',
-  templateUrl: './listar-esta.page.html',
-  styleUrls: ['./listar-esta.page.scss'],
+  selector: 'app-listar-esta-usr',
+  templateUrl: './listar-esta-usr.page.html',
+  styleUrls: ['./listar-esta-usr.page.scss'],
 })
-export class ListarEstaPage implements OnInit {
+export class ListarEstaUsrPage implements OnInit {
   estacionamientos: any[] = [];
   public alertButtons = ['OK'];
-
+  
   constructor(private sdbService: SdbService, private alertController: AlertController, private router: Router,
-    private authService: AutenticacionService) {}
+    private authService: AutenticacionService) { }
 
   ngOnInit() {
     this.obtenerEstacionamientosConNombres();
   }
   async presentAlert() {
     const alert = await this.alertController.create({
-      header: 'Registrate',
-      message: 'Para poder arrendar debe estar registrado como usuario',
+      header: 'Arriendo Realizado',
+      message: 'Se realizó el arriendo exitosamente',
       buttons: [
         {
-          text: 'Registrarse',
+          text: 'OK',
           handler: () => {
             // Utiliza el Router para la redirección
-            this.router.navigate(['/registro']);
+            this.router.navigate(['/en-curso']);
           }
         }
       ]
